@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金女王 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9fafc;
+      color: #1e293b;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-top: 0.5rem;
+      margin-bottom: 1.25rem;
+      color: #0f172a;
+      border-left: 5px solid #d4a373;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 450;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      color: #1e293b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 480;
+      margin-top: 1.75rem;
+      margin-bottom: 0.4rem;
+      color: #334155;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+      color: #334155;
+    }
+
+    /* 摘要卡片 —— 留白、轻质感 */
+    .summary-card {
+      background: #ffffff;
+      border: 1px solid #e9edf2;
+      padding: 1.5rem 1.75rem;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    .summary-card p {
+      margin-bottom: 0.3rem;
+    }
+
+    .summary-card .tagline {
+      font-size: 1.1rem;
+      font-weight: 380;
+      color: #5f6b7a;
+    }
+
+    .insight-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #475569;
+      margin-right: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 特点列表 —— 无图标，纯粹文字层次 */
+    .feature-item {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+
+    .feature-item .index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.8rem;
+      height: 1.8rem;
+      background: #f1f5f9;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 450;
+      color: #64748b;
+      flex-shrink: 0;
+    }
+
+    .feature-item .desc {
+      flex: 1;
+    }
+
+    .feature-item .desc strong {
+      font-weight: 520;
+      color: #0f172a;
+    }
+
+    /* 使用建议区 */
+    .advice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .advice-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.25rem 1.2rem;
+      border: 1px solid #edf2f7;
+    }
+
+    .advice-card h4 {
+      font-size: 1rem;
+      font-weight: 490;
+      margin-bottom: 0.3rem;
+      color: #1e293b;
+    }
+
+    .advice-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #475569;
+    }
+
+    /* faq 摘要 */
+    .faq-block {
+      background: #ffffff;
+      padding: 1.25rem 1.5rem;
+      border-radius: 18px;
+      border: 1px solid #ecf1f7;
+      margin: 1.8rem 0;
+    }
+
+    .faq-block details {
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-block summary {
+      font-weight: 450;
+      cursor: pointer;
+      color: #1e293b;
+      padding: 0.25rem 0;
+    }
+
+    .faq-block details p {
+      margin: 0.5rem 0 0.25rem 1.2rem;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    /* 链接样式——克制 */
+    a {
+      color: #a4724a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(164, 114, 74, 0.3);
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: #a4724a;
+    }
+
+    hr {
+      margin: 2.5rem 0 1rem;
+      border: none;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-top: 2rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .advice-grid {
+        grid-template-columns: 1fr;
+      }
+      .summary-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero 极简 -->
+  <h1>赏金女王</h1>
+  <p style="font-size: 1.05rem; color: #475569; margin-top: -0.2rem;">
+    一份面向判断力型用户的简明产品说明 · 用途 · 边界
+  </p>
+
+  <!-- 摘要 (卡片) -->
+  <div class="summary-card">
+    <p class="tagline"><span class="insight-badge">摘要</span> 如果你正寻找一个结构清晰、功能指向明确的平台，<a href="https://webs-bqqueen.com">赏金女王</a> 提供了一个集中式的信息与工具界面。它并非娱乐场或游戏大厅，而更接近一个整合了特定任务、奖励逻辑与用户面板的后台型产品。</p>
+    <p style="margin-top: 0.6rem; color: #475569;">从命名与界面风格推测，其核心逻辑围绕“赏金任务”展开——用户通过完成指定行为或达成条件，获取对应的数字激励。整体体验偏向系统化，而非随机博弈。</p>
+  </div>
+
+  <!-- 亮点 · 产品特征 (不用图标只用序号) -->
+  <h2>特征与设计取向</h2>
+  <div class="feature-item">
+    <span class="index">1</span>
+    <div class="desc"><strong>任务驱动结构</strong> —— 页面组织以目标为导向，通常展示当前可参与的任务列表、进度追踪及历史记录，减少不必要的浏览干扰。</div>
+  </div>
+  <div class="feature-item">
+    <span class="index">2</span>
+    <div class="desc"><strong>数据可视化辅助</strong> —— 在个人面板中倾向于用简洁图表或数字卡片呈现收益趋势、完成率，降低用户手动计算成本。</div>
+  </div>
+  <div class="feature-item">
+    <span class="index">3</span>
+    <div class="desc"><strong>低娱乐化 UI</strong> —— 配色克制、按钮文案偏执行（如“开始任务”“领取奖励”），不刻意强调随机性或刺激感，适合偏理性操作习惯的用户。</div>
+  </div>
+
+  <!-- 使用建议 -->
+  <h2>使用建议</h2>
+  <p>基于上述特征，以下场景与方式可能更贴合产品原本的节奏：</p>
+  <div class="advice-grid">
+    <div class="advice-card">
+      <h4>· 先浏览任务说明</h4>
+      <p>每个任务通常附带明确的参与条件与奖励规则。建议花几分钟阅读细则，再决定是否投入时间。</p>
+    </div>
+    <div class="advice-card">
+      <h4>· 关注面板更新</h4>
+      <p>部分任务具有时效性或阶段目标。定期查看个人进度页，有助于规划参与顺序。</p>
+    </div>
+    <div class="advice-card">
+      <h4>· 善用筛选与排序</h4>
+      <p>当任务数量较多时，利用平台自带的分类或状态筛选，可以快速定位高优先级项目。</p>
+    </div>
+    <div class="advice-card">
+      <h4>· 保持合理的预期</h4>
+      <p>任何与任务奖励相关的平台都存在规则变动可能。建议将 <a href="https://webs-bqqueen.com">赏金女王</a> 视为一个效率工具，而非被动收入来源。</p>
+    </div>
+  </div>
+
+  <!-- 可信但克制的访问说明 -->
+  <h2>访问与边界</h2>
+  <p>该平台不需要特殊网络环境即可直接打开（请自行确认当地法规）。注册流程通常包含邮箱或手机验证，常见账户体系。未登录状态下可浏览公共任务列表，但完整功能如领取奖励、查看个人统计数据则需要完成身份绑定。</p>
+  <p>从技术角度看，页面加载速度较快，无过度重定向或弹窗干扰。如果你对任务平台的数据透明性有要求，可以先观察一段时间社区反馈或任务更新频率，再决定深入程度。</p>
+
+  <!-- FAQ 摘要 (仅展开两项) -->
+  <div class="faq-block">
+    <h3 style="margin-top: 0; border-bottom: none; padding-bottom: 0; font-weight: 470;">常见疑问摘要</h3>
+    <details>
+      <summary>这个平台适合什么样的用户？</summary>
+      <p>适合愿意花时间阅读规则、按步骤完成操作，并且对数字奖励有耐心的用户。不适合追求即时反馈或高随机性体验的人群。</p>
+    </details>
+    <details>
+      <summary>需要付费才能使用核心功能吗？</summary>
+      <p>根据公开界面，参与基础任务与查看面板均无前置费用。部分高级统计或专属任务可能需要达到一定等级或持有特定资格，建议以平台实际呈现为准。</p>
+    </details>
+  </div>
+
+  <!-- 再次嵌入链接——自然语境 -->
+  <p style="margin-top: 1.5rem;">无论你是第一次听说还是想重新了解，<a href="https://webs-bqqueen.com">赏金女王</a> 提供了一个聚焦于任务与回报的平台逻辑。如果你偏好结构化的操作界面，不妨亲自体验其信息组织方式。</p>
+
+  <hr>
+  <div class="footer-note">
+    本页面仅为产品方向说明，不构成任何投资或参与建议。请根据自身判断理性使用。
+  </div>
+</div>
+</body>
+</html>

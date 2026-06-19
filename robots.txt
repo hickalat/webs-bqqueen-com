@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hickalat.github.io/webs-bqqueen-com/sitemap.xml
